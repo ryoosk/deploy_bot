@@ -6,6 +6,7 @@ import logging
 import requests
 import os
 import re
+from urlparse import parse_qs
 
 SLACK_TOKEN = os.environ['slackToken']
 GITHUB_TOKEN = os.environ['githubToken']
@@ -34,6 +35,8 @@ def github_merge_pull_req(number):
     return response.json() if response.ok else None
 
 def lambda_handler(event, context):
+    if not 'body' in event:
+        return None
     params = parse_qs(event['body'])
     token = params['token'][0]
     if token != SLACK_TOKEN:
