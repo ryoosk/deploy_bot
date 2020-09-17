@@ -1,0 +1,17 @@
+{
+  "name": "github-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "archive": "echo `cat .env` node_modules/lambda_bot/bin/lambda_bot archive | sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "querystring": "^0.2.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
