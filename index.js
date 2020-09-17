@@ -41,7 +41,6 @@ const GithubAPI = {
 }
 
 exports.handler = function(event, context, callback) {
-    context.callbackWaitsForEmptyEventLoop = false
     if (!event['body']) return null
 
     const params = querystring.parse(event['body'])
