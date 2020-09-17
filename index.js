@@ -56,12 +56,12 @@ exports.handler = function(event, context, callback) {
         GithubAPI.create_pull_req(branch, target)
             .then((res)=> GithubAPI.merge_pull_req(res.number))
             .catch(()=> undefined)
-        return callback(null, {
+        context.succeed({
             response_type: 'in_channel',
             text: `これから${branch}を${target}にデプロイしまーす！(๑˃̵ᴗ˂̵) \nhttps://circleci.com/gh/getgamba/gamba\nお疲れ様でしたー＼(^o^)／`,
         })
     } else {
-        callback(null, {
+        context.succeed({
             text: `意味わかんなーい(≧∀≦)\n/deploy [<branch_name>] to <production|staging|ios|android|app|codepush>\nこんな感じで話しかけてねー♡ `
         })
     }
