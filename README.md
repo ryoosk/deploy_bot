@@ -9,6 +9,8 @@ A Slack bot for AWS Lambda that automate deployment with Circle CI.
 1. Slashのワークスペース管理より、Appカスタムインテグレーションへ進み、Slash Commandsを追加します。
 1. Slash Commandsのインテグレーションを追加し、トークンに表示された内容を取得します。
 
+![Slack管理画面](https://user-images.githubusercontent.com/1058058/121304694-a3988c80-c937-11eb-978d-722643179505.png)
+
 ### AWS Lambdaの準備(gamba_deploy_bot)
 このLambda関数は、AWS API Gatewayからコマンドを受け取って、別のLambda関数(gamba_deploy_runner)へリクエストを引き継ぎます。
 Githubのプルリクエストの処理は若干時間がかかるため、1つのLambda関数内で一度に処理しようとするとタイムアウトが発生してしまいます。
