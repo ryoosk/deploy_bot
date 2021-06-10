@@ -59,4 +59,5 @@ Slackのチャネルに対して、以下のコマンドを送ると、デプロ
   * `ios`: iOSのアプリのビルド＆AppStoreへのアップロード 
   * `codepush`: CodePushへのJSコードのアップロード
   * `web`: `www.getgamba.com/m` 配下にベータ版Webクライアントのみデプロイします
+  * `apk`: androidのapkをビルドします
 
